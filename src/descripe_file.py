@@ -4,7 +4,7 @@ import numpy as np
 from src.embedder import VietnameseEmbedder, load_faiss_index 
 
 def call_gemini_for_summary(prompt):
-    genai.configure(api_key="AIzaSyCjIipLCPuzabH47QxQ9keRQcYrt16tFnw")
+    genai.configure(api_key="AIzaSyCjIipLCPu...")
     model = genai.GenerativeModel('gemini-2.0-flash')
 
     response = model.generate_content(
