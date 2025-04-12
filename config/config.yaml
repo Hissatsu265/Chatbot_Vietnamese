@@ -1,0 +1,5 @@
+embedding_model: "dangvantuan/vietnamese-embedding"
+chunk_size: 300
+chunk_overlap: 30
+vector_store_path: "embeddings/vector_store/faiss_index"
+gemini_model: "gemini-2.0-flash"

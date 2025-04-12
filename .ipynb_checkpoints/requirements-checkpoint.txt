@@ -1,0 +1,9 @@
+langchain
+langchain-community
+langchain-core
+google-generativeai
+sentence-transformers
+underthesea
+PyMuPDF
+chromadb
+python-dotenv
