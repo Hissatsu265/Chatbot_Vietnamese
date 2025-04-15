@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViTalk - Chat với tài liệu PDF của bạn</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>Vi<span>Talk</span></h1>
+                <p>Trò chuyện thông minh với tài liệu của bạn</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Trang chủ</a></li>
+                    <li><a href="#">Hướng dẫn</a></li>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <h2>Tải lên tài liệu PDF của bạn</h2>
+                <div class="upload-box" id="upload-box">
+                    <i class="fas fa-file-pdf"></i>
+                    <p>Kéo thả file PDF hoặc</p>
+                    <label for="file-upload" class="custom-file-upload">
+                        Chọn file
+                    </label>
+                    <input type="file" id="file-upload" accept=".pdf" />
+                </div>
+                <div class="file-info hidden" id="file-info">
+                    <div class="file-details">
+                        <i class="fas fa-file-pdf"></i>
+                        <div>
+                            <p id="file-name">document.pdf</p>
+                            <small id="file-size">2.4 MB</small>
+                        </div>
+                    </div>
+                    <button id="process-btn">Xử lý tài liệu</button>
+                </div>
+            </div>
+
+            <div class="chat-container hidden" id="chat-container">
+                <div class="chat-header">
+                    <div class="chat-title">
+                        <i class="fas fa-comment-dots"></i>
+                        <h3>Trò chuyện với tài liệu của bạn</h3>
+                    </div>
+                    <button id="new-chat-btn"><i class="fas fa-plus"></i> Chat mới</button>
+                </div>
+                
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message bot">
+                        <div class="avatar"><i class="fas fa-robot"></i></div>
+                        <div class="content">
+                            <p>Xin chào! Tôi đã phân tích xong tài liệu của bạn. Bạn có thể hỏi bất kỳ câu hỏi gì về nội dung tài liệu.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="message user">
+                        <div class="content">
+                            <p>Tóm tắt nội dung chính của tài liệu này cho tôi.</p>
+                        </div>
+                        <div class="avatar"><i class="fas fa-user"></i></div>
+                    </div>
+                    
+                    <div class="message bot">
+                        <div class="avatar"><i class="fas fa-robot"></i></div>
+                        <div class="content">
+                            <p>Tài liệu này trình bày về [nội dung ví dụ]. Các điểm chính bao gồm:</p>
+                            <ul>
+                                <li>Phần 1: Giới thiệu về chủ đề và bối cảnh</li>
+                                <li>Phần 2: Phân tích các yếu tố quan trọng</li>
+                                <li>Phần 3: Đề xuất giải pháp và kết luận</li>
+                            </ul>
+                            <p>Tài liệu nhấn mạnh tầm quan trọng của [điểm nhấn chính] và đề xuất [giải pháp chính].</p>
+                        </div>
+                    </div>
+
+                    <div class="message user">
+                        <div class="content">
+                            <p>Giải thích chi tiết phần 2 về phân tích các yếu tố.</p>
+                        </div>
+                        <div class="avatar"><i class="fas fa-user"></i></div>
+                    </div>
+                    
+                    <div class="message bot">
+                        <div class="avatar"><i class="fas fa-robot"></i></div>
+                        <div class="content">
+                            <p>Trong phần 2, tài liệu phân tích chi tiết các yếu tố sau:</p>
+                            <ol>
+                                <li><strong>Yếu tố A:</strong> Phân tích tác động của yếu tố này đến [chủ đề], với số liệu cho thấy tăng trưởng 25% trong 5 năm qua.</li>
+                                <li><strong>Yếu tố B:</strong> Đánh giá mối quan hệ giữa yếu tố này và hiệu quả của [quy trình], với các nghiên cứu từ [nguồn uy tín].</li>
+                                <li><strong>Yếu tố C:</strong> Thảo luận về các thách thức hiện tại và tiềm năng phát triển trong tương lai.</li>
+                            </ol>
+                            <p>Phần này kết luận rằng yếu tố B có ảnh hưởng lớn nhất và cần được ưu tiên trong các chiến lược sắp tới.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input">
+                    <textarea id="user-input" placeholder="Nhập câu hỏi của bạn..."></textarea>
+                    <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 ViTalk. Tất cả quyền được bảo lưu.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
